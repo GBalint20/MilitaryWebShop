@@ -1,4 +1,4 @@
-export const KategoriaLista = [
+export const kategoriaLista = [
     { nev: "Ruha fajták" },
     { nev: "Tartozékok" },
     { nev: "Kések" },

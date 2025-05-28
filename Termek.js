@@ -31,11 +31,9 @@ export default class Termek {
     if (kosarbaGomb) {
       kosarbaGomb.addEventListener("click", () => {
         console.log(`${this.#adat.nev} hozzáadva a kosárhoz!`);
-        // Itt adhatsz hozzá további logikát, pl. kosár frissítése
         const esemeny = new CustomEvent("kosarba", {
-          detail: this.#adat, // Az esemény részletei (termék adatai)
+          detail: this.#adat, 
         });
-        // Esemény kibocsátása
         window.dispatchEvent(esemeny);
       });
     } else {
