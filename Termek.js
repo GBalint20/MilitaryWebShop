@@ -26,17 +26,20 @@ export default class Termek {
     );
     this.#kosarbaGombEsemeny();
   }
-
   #kosarbaGombEsemeny() {
-        const kosarbaGomb = documnet.getElementById(`kosarba${this.#index}`);
-        if (kosarbaGomb) {
-                kosarbaGomb.addEventListener("click", () => {
-                        console.log(`${this.#adat.nev} Hozzáadva a Kosárhoz!`);
-                        const esemeny = new CostumeEvent("kosarba", {detail: this.#adat})
-                        window.dispatchEvent(esemeny);
-                });
-        }else {
-                console.error(`Nem található a kosárba gomb: Kosárba${this.#index}`);
-        }
+    const kosarbaGomb = document.getElementById(`kosarba${this.#index}`);
+    if (kosarbaGomb) {
+      kosarbaGomb.addEventListener("click", () => {
+        console.log(`${this.#adat.nev} hozzáadva a kosárhoz!`);
+        // Itt adhatsz hozzá további logikát, pl. kosár frissítése
+        const esemeny = new CustomEvent("kosarba", {
+          detail: this.#adat, // Az esemény részletei (termék adatai)
+        });
+        // Esemény kibocsátása
+        window.dispatchEvent(esemeny);
+      });
+    } else {
+      console.error(`Nem található a kosárba gomb: kosarba${this.#index}`);
+    }
   }
 }

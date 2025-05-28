@@ -1,18 +1,8 @@
 export const KategoriaLista = [
-        {
-                nev: "Ruhák fajták"
-
-        },
-        {
-                nev: "Tartozékok"
-        },
-        {
-                nev: "Kések"
-        },
-        {
-                nev: "Étel"
-        },
-        {
-                nev: "BlackMarket"
-        },
-]
+    { nev: "Ruha fajták" },
+    { nev: "Tartozékok" },
+    { nev: "Kések" },
+    { nev: "Ételek" },
+    { nev: "Járművek" },
+    { nev: "BlackMarket" }
+];

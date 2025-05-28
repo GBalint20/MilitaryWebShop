@@ -1,21 +1,22 @@
 export default class Kategoria {
-    constructor(kategoriaNev, szuloElem, kattintasCallback) {
-        this.kategoriaNev = kategoriaNev;
-        this.szuloElem = szuloElem;
-        this.kattintasCallback = kattintasCallback;
-        this.megjelenit();
-    }
+  #adat = {};
+  #szElem;
+  #index;
+  constructor(adat, szElem, index) {
+    this.#adat = adat;
+    this.#szElem = szElem;
+    this.#index = index;
+    this.megjelenit();
+  }
 
-    megjelenit() {
-        this.szuloElem.innerHTML += `
-            <div class="card m-2 kategoriak-card" style="width: 18rem; cursor:pointer;">
+  megjelenit() {
+    this.#szElem.insertAdjacentHTML(
+      "beforeend",
+      `<div class="card text-center mb-3" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">${this.kategoriaNev}</h5>
+                        <h5 class="card-title">${this.#adat.nev}</h5>
                 </div>
-            </div>
-        `;
-        // Eseménykezelő hozzáadása
-        const card = this.szuloElem.querySelector('.kategoriak-card:last-child');
-        card.addEventListener('click', () => this.kattintasCallback(this.kategoriaNev));
-    }
+        </div>`
+    );
+  }
 }
